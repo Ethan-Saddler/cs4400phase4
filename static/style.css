@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+  }
+  h1, h2 {
+    color: #333;
+  }
+  form {
+    margin-bottom: 30px;
+    padding: 10px;
+    background: #f9f9f9;
+  }
+  label {
+    display: inline-block;
+    width: 180px;
+    margin-bottom: 5px;
+  }
+  button {
+    margin-top: 10px;
+  }
+  table {
+    margin-top: 20px;
+  }
+  
+.s-button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 4px 0;
+  background-color: #424242;
+  color: white;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.s-button:hover {
+  background-color: #5d5d5d;
+}

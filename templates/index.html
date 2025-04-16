@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Phase 4</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+
+  <h2>Add Airplane</h2>
+  <form action="/add_airplane" method="POST">
+    <label>Airline ID: <input type="text" name="airlineID" placeholder="e.g. DL"></label><br/>
+    <label>Tail Num: <input type="text" name="tail_num" placeholder="Unique tail number"></label><br/>
+    <label>Seat Capacity: <input type="number" name="seat_capacity" placeholder="Must be > 0"></label><br/>
+    <label>Speed: <input type="number" name="speed" placeholder="Must be > 0"></label><br/>
+    <label>Location ID: <input type="text" name="locationID" placeholder="Unique location ID"></label><br/>
+    <label>Plane Type: <input type="text" name="plane_type" placeholder="Airbus/Boeing/general"></label><br/>
+    <label>Maintenanced?: <input type="checkbox" name="maintenanced"></label><br/>
+    <label>Model: <input type="text" name="model" placeholder="Model name (optional)"></label><br/>
+    <label>Neo?: <input type="checkbox" name="neo"></label><br/>
+    <button type="submit" class="s-button">Add Airplane</button>
+  </form>
+
+  <hr/>
+
+  <h2>Add Airport</h2>
+  <form action="/add_airport" method="POST">
+    <label>Airport ID (3 chars): <input type="text" name="airportID" placeholder="e.g. LAX"></label><br/>
+    <label>Airport Name: <input type="text" name="airport_name" placeholder="e.g. Los Angeles Intl"></label><br/>
+    <label>City: <input type="text" name="city" placeholder="e.g. Los Angeles"></label><br/>
+    <label>State: <input type="text" name="state" placeholder="e.g. CA"></label><br/>
+    <label>Country: <input type="text" name="country" placeholder="3-letter code, e.g. USA"></label><br/>
+    <label>Location ID: <input type="text" name="locationID" placeholder="Unique location ID"></label><br/>
+    <button type="submit" class="s-button">Add Airport</button>
+  </form>
+
+  <hr/>
+
+  <h2>Add Person</h2>
+  <form action="/add_person" method="POST">
+    <label>Person ID: <input type="text" name="personID" placeholder="Unique person ID"></label><br/>
+    <label>First Name: <input type="text" name="first_name" placeholder="e.g. John"></label><br/>
+    <label>Last Name: <input type="text" name="last_name" placeholder="e.g. Doe"></label><br/>
+    <label>Location ID: <input type="text" name="locationID" placeholder="Existing location ID"></label><br/>
+    <label>Tax ID: <input type="text" name="taxID" placeholder="For pilots (optional)"></label><br/>
+    <label>Experience: <input type="number" name="experience" placeholder="For pilots"></label><br/>
+    <label>Miles: <input type="number" name="miles" placeholder="For passengers"></label><br/>
+    <label>Funds: <input type="number" name="funds" placeholder="For passengers"></label><br/>
+    <button type="submit" class="s-button">Add Person</button>
+  </form>
+
+  <hr/>
+
+  <h2>Offer Flight</h2>
+  <form action="/offer_flight" method="POST">
+    <label>Flight ID: <input type="text" name="flightID" placeholder="Unique flight ID"></label><br/>
+    <label>Route ID: <input type="text" name="routeID" placeholder="Existing route ID"></label><br/>
+    <label>Support Airline: <input type="text" name="support_airline" placeholder="Airline ID"></label><br/>
+    <label>Support Tail: <input type="text" name="support_tail" placeholder="Tail number for airline"></label><br/>
+    <label>Progress (0 by default): <input type="number" name="progress" placeholder="0"></label><br/>
+    <label>Next Time (HH:MM:SS): <input type="text" name="next_time" placeholder="e.g. 09:00:00"></label><br/>
+    <label>Cost: <input type="number" name="cost" placeholder="Flight cost"></label><br/>
+    <button type="submit" class="s-button">Offer Flight</button>
+  </form>
+
+  <hr/>
+
+  <h2>Flight Landing</h2>
+  <form action="/flight_landing" method="POST">
+    <label>Flight ID: <input type="text" name="flightID" placeholder="Flight ID to land"></label><br/>
+    <button type="submit" class="s-button">Land Flight</button>
+  </form>
+
+  <h2>Flight Takeoff</h2>
+  <form action="/flight_takeoff" method="POST">
+    <label>Flight ID: <input type="text" name="flightID" placeholder="Flight ID to take off"></label><br/>
+    <button type="submit" class="s-button">Takeoff Flight</button>
+  </form>
+
+  <h2>Passengers Board</h2>
+  <form action="/passengers_board" method="POST">
+    <label>Flight ID: <input type="text" name="flightID" placeholder="Flight ID"></label><br/>
+    <button type="submit" class="s-button">Board Passengers</button>
+  </form>
+
+  <h2>Passengers Disembark</h2>
+  <form action="/passengers_disembark" method="POST">
+    <label>Flight ID: <input type="text" name="flightID" placeholder="Flight ID"></label><br/>
+    <button type="submit" class="s-button">Disembark Passengers</button>
+  </form>
+
+  <h2>Assign Pilot</h2>
+  <form action="/assign_pilot" method="POST">
+    <label>Flight ID: <input type="text" name="flightID" placeholder="Flight ID"></label><br/>
+    <label>Person ID (Pilot): <input type="text" name="personID" placeholder="Pilot's Person ID"></label><br/>
+    <button type="submit" class="s-button">Assign Pilot</button>
+  </form>
+
+  <h2>Recycle Crew</h2>
+  <form action="/recycle_crew" method="POST">
+    <label>Flight ID: <input type="text" name="flightID" placeholder="Flight ID"></label><br/>
+    <button type="submit" class="s-button">Recycle Crew</button>
+  </form>
+
+  <h2>Retire Flight</h2>
+  <form action="/retire_flight" method="POST">
+    <label>Flight ID: <input type="text" name="flightID" placeholder="Flight ID"></label><br/>
+    <button type="submit" class="s-button">Retire Flight</button>
+  </form>
+
+  <h2>Simulation Cycle</h2>
+  <form action="/simulation_cycle" method="POST">
+    <button type="submit" class="s-button">Run Simulation Cycle</button>
+  </form>
+
+  <hr/>
+
+  <h2>Views</h2>
+  <div class="s-buttons">
+    <a href="/view/flights_in_the_air" class="s-button" target="_blank">Flights In The Air</a>
+    <a href="/view/flights_on_the_ground" class="s-button" target="_blank">Flights On The Ground</a>
+    <a href="/view/people_in_the_air" class="s-button" target="_blank">People In The Air</a>
+    <a href="/view/people_on_the_ground" class="s-button" target="_blank">People On The Ground</a>
+    <a href="/view/route_summary" class="s-button" target="_blank">Route Summary</a>
+    <a href="/view/alternative_airports" class="s-button" target="_blank">Alternative Airports</a>
+  </div>
+
+</body>
+</html>

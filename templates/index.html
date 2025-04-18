@@ -52,6 +52,15 @@
 
   <hr/>
 
+  <h2>Grant / Revoke Pilot License</h2>
+  <form action="/grant_or_revoke_pilot_license" method="POST">
+    <label>Person ID (Pilot): <input type="text" name="personID" placeholder="Pilot's Person ID"></label><br/>
+    <label>License: <input type="text" name="license" placeholder="License name/code"></label><br/>
+    <button type="submit" class="s-button">Toggle License</button>
+  </form>
+
+  <hr/>
+
   <h2>Offer Flight</h2>
   <form action="/offer_flight" method="POST">
     <label>Flight ID: <input type="text" name="flightID" placeholder="Unique flight ID"></label><br/>

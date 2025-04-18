@@ -147,6 +147,30 @@ def grant_or_revoke_pilot_license():
 
     return message
 
+@app.route('/grant_or_revoke_pilot_license', methods=['POST'])
+def grant_or_revoke_pilot_license_route():
+    personID    = request.form.get('personID')
+    license_str = request.form.get('license')
+
+    conn = get_db_connection(); cur = conn.cursor()
+    try:
+        cur.callproc('grant_or_revoke_pilot_license', [personID, license_str])
+        conn.commit()
+        cur.execute(
+            "SELECT * FROM pilot_licenses WHERE personID = %s AND license = %s",
+            (personID, license_str)
+        )
+        license_rec = cur.fetchone()
+        if license_rec:
+            message = f"License '{license_str}' is now ACTIVE for person {personID}."
+        else:
+            message = f"License '{license_str}' is now INACTIVE for person {personID}."
+    except Exception as e:
+        message = f"Error calling grant_or_revoke_pilot_license: {e}"
+    finally:
+        cur.close(); conn.close()
+    return message
+
 @app.route('/offer_flight', methods=['POST'])
 def offer_flight():
     flightID = request.form.get('flightID')
@@ -451,5 +475,10 @@ def debug_sql():
         return "No airline found."
     return f"Airline exists: {rows}"
 
+@app.before_request
+def check_request():
+    print("Request IP:", request.remote_addr)
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='127.0.0.1', port=5001, debug=True)
+

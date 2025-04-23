@@ -1,6 +1,6 @@
 # CS4400 Phase 4
 
-## Setup Instructions/Setup
+## Setup Instructions
 
 1. Run database and procedures on my sqlworkbench
 

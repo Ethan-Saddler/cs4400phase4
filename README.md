@@ -14,7 +14,7 @@
 
 ## Technologies
 
-1. Flask: this was used to create the backend server and handled the HTTP requests. Since it is written in python, it is trivial to connect to the MYSQL server using pymysql, which allowed us to call procedures with the parameters passed in from the frontend when a route was called. Another nice aspect of flask was that because it is based on routes, it made it much easier to compartmentalize and have different routes for each procedure.
+1. Flask: This was used to create the backend server and handled the HTTP requests. Since it is written in python, it is trivial to connect to the MYSQL server using pymysql, which allowed us to call procedures with the parameters passed in from the frontend when a route was called. Another nice aspect of flask was that because it is based on routes, it made it much easier to compartmentalize and have different routes for each procedure.
 
 2. HTML: this was used to make the core aspects and structure of the frontend and was the connection from the frontend to the flask backend.
 

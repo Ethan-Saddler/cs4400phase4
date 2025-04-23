@@ -16,9 +16,21 @@
     <label>Speed: <input type="number" name="speed" placeholder="Must be > 0"></label><br/>
     <label>Location ID: <input type="text" name="locationID" placeholder="Unique location ID"></label><br/>
     <label>Plane Type: <input type="text" name="plane_type" placeholder="Airbus/Boeing/general"></label><br/>
-    <label>Maintenanced?: <input type="checkbox" name="maintenanced"></label><br/>
+    <label>
+      Maintenanced?:
+      <input type="radio" name="maintenanced" value="true"> True
+      <input type="radio" name="maintenanced" value="false"> False
+      <button type="button" onclick="document.querySelectorAll('input[name=maintenanced]').forEach(r => r.checked = false)">Reset</button>
+    </label>
+    <br/>
     <label>Model: <input type="text" name="model" placeholder="Model name (optional)"></label><br/>
-    <label>Neo?: <input type="checkbox" name="neo"></label><br/>
+    <label>
+      Neo?:
+      <input type="radio" name="neo" value="true"> True
+      <input type="radio" name="neo" value="false"> False
+      <button type="button" onclick="document.querySelectorAll('input[name=neo]').forEach(r => r.checked = false)">Reset</button>
+    </label>
+    <br/>
     <button type="submit" class="s-button">Add Airplane</button>
   </form>
 
